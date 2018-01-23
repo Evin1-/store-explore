@@ -1,9 +1,6 @@
 package com.example.myapplication.di.scopes;
 
-import javax.inject.Scope;
-
-import kotlin.annotation.AnnotationRetention;
-import kotlin.annotation.Retention;
+import javax.inject.Scope
 
 @Scope
 @Retention(AnnotationRetention.RUNTIME)

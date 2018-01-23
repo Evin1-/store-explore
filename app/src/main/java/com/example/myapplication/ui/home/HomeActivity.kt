@@ -1,6 +1,5 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.home
 
-import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
@@ -10,8 +9,7 @@ import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.di.MainComponent
-import com.example.myapplication.ui.main.di.DaggerHomeComponent
-import com.example.myapplication.util.ViewModelProviderFactory
+import com.example.myapplication.ui.home.di.DaggerHomeComponent
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeContract.View {

@@ -1,7 +1,6 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.home
 
 import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableArrayList
 import com.example.myapplication.base.BaseViewModel
 import com.example.myapplication.data.DataRepository

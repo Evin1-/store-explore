@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.home
 
 import android.arch.lifecycle.MutableLiveData
 import com.example.myapplication.data.entities.Card

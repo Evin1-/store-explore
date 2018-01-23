@@ -1,10 +1,7 @@
 package com.example.myapplication.base;
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.myapplication.AbercrombieApp

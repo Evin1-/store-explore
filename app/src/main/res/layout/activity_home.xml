@@ -7,18 +7,17 @@
 
     <variable
       name="viewModel"
-      type="com.example.myapplication.ui.main.HomeViewModel" />
+      type="com.example.myapplication.ui.home.HomeViewModel" />
   </data>
 
   <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.ui.main.HomeActivity">
+    tools:context="com.example.myapplication.ui.home.HomeActivity">
 
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
+    <android.support.v7.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"

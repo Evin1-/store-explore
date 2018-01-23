@@ -34,6 +34,9 @@ dependencies {
   implementation "com.android.support:appcompat-v7:$rootProject.androidSupportVersion"
   implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
 
+  implementation "com.android.support:cardview-v7:$rootProject.androidSupportVersion"
+  implementation "com.android.support:recyclerview-v7:$rootProject.androidSupportVersion"
+
   testImplementation "junit:junit:$rootProject.jUnitVersion"
 
   androidTestImplementation "com.android.support.test:runner:$rootProject.testRunnerVersion"
