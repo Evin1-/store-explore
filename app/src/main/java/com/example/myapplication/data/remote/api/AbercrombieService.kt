@@ -9,11 +9,15 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Headers
+import retrofit2.http.POST
 
 /**
  * Created by evin on 1/22/18.
  */
 interface AbercrombieService {
+  @Headers("User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3)")
   @GET("/anf/nativeapp/qa/codetest/codeTest_exploreData.json")
   fun retrieveCards(): Single<List<Card>>
 

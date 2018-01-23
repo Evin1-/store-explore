@@ -23,8 +23,8 @@ class HomeViewModel @Inject constructor(private val dataRepository: DataReposito
 
   override fun loadData() {
     dataRepository.getCards()
-        .subscribeOn(schedulerProvider.ui())
-        .observeOn(schedulerProvider.io())
+        .subscribeOn(schedulerProvider.io())
+        .observeOn(schedulerProvider.ui())
         .subscribe(Consumer { questionCardData.value = it })
   }
 
