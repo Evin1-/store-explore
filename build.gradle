@@ -31,8 +31,8 @@ ext {
   versionName = "1.0"
 
   minSdkVersion = 18
-  targetSdkVersion = 27
-  compileSdkVersion = 27
+  targetSdkVersion = 26
+  compileSdkVersion = 26
 
   androidSupportVersion = '26.1.0'
   constraintLayoutVersion = '1.0.2'
@@ -44,12 +44,8 @@ ext {
   retrofitVersion = '2.3.0'
   daggerVersion = '2.14.1'
   okhttpVersion = '3.9.1'
-  rxPreferencesVersion = '2.0.0-RC3'
-  stethoVersion = '1.5.0'
-  leakCanaryVersion = '1.5.4'
-  searchViewVersion = '1.4.0'
-  frescoVersion = '1.5.0'
   timberVersion = '4.6.0'
+  glideVersion = '4.2.0'
 
   jUnitVersion = '4.12'
   testRunnerVersion = '1.0.1'

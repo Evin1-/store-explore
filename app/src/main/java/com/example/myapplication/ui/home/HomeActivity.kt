@@ -5,7 +5,9 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import com.example.myapplication.BR
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
@@ -44,6 +46,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeCon
     viewDataBinding.aMainRecycler.adapter = cardAdapter
     viewDataBinding.aMainRecycler.layoutManager = LinearLayoutManager(this)
     viewDataBinding.aMainRecycler.itemAnimator = DefaultItemAnimator()
+    viewDataBinding.aMainRecycler.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
   }
 
   override fun injectDependencies(mainComponent: MainComponent?) {

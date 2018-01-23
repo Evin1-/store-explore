@@ -32,7 +32,6 @@ class HomeViewModel @Inject constructor(private val dataRepository: DataReposito
   }
 
   override fun setLiveDataList(cardLiveData: List<Card>?) {
-    AppLogger.d(cardLiveData.toString())
     questionDataList.clear()
     questionDataList.addAll(cardLiveData ?: emptyList())
   }
