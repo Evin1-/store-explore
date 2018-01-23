@@ -8,6 +8,8 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
+import android.widget.Toast
 import com.example.myapplication.BR
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
@@ -15,6 +17,7 @@ import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.di.MainComponent
 import com.example.myapplication.ui.card.CardAdapter
 import com.example.myapplication.ui.home.di.DaggerHomeComponent
+import kotlinx.android.synthetic.main.activity_home.*
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeContract.View {
@@ -66,15 +69,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeCon
   }
 
   override fun showError(error: String) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
   }
 
   override fun showProgress() {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    a_main_progress.visibility = View.VISIBLE
   }
 
   override fun hideProgress() {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    a_main_progress.visibility = View.INVISIBLE
   }
-
 }
