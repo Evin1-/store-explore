@@ -16,7 +16,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:cardElevation="5dp">
+    app:cardElevation="@dimen/card_elevation">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -30,8 +30,8 @@
 
         <ImageView
           android:layout_width="match_parent"
-          android:layout_height="300dp"
-          android:contentDescription="Card background"
+          android:layout_height="@dimen/default_image_height"
+          android:contentDescription="@string/card_background_description"
           android:scaleType="centerCrop"
           app:imageUrl="@{viewModel.backgroundImage}" />
 
@@ -39,7 +39,7 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:orientation="vertical"
-          android:padding="30dp">
+          android:padding="@dimen/initial_padding_linear">
 
           <TextView
             android:id="@+id/i_card_top"
@@ -48,18 +48,18 @@
             android:gravity="center"
             android:text="@{viewModel.topDescription}"
             android:textColor="@android:color/white"
-            android:textSize="13sp"
+            android:textSize="@dimen/top_string_size"
             tools:text="Placeholder" />
 
           <TextView
             android:id="@+id/i_card_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/title_string_margin_top"
             android:gravity="center"
             android:text="@{viewModel.title}"
             android:textColor="@android:color/white"
-            android:textSize="17sp"
+            android:textSize="@dimen/title_string_size"
             android:textStyle="bold"
             tools:text="Placeholder" />
 
@@ -67,11 +67,11 @@
             android:id="@+id/i_card_promo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/promo_string_margin_top"
             android:gravity="center"
             android:text="@{viewModel.promoMessage}"
             android:textColor="@android:color/white"
-            android:textSize="11sp"
+            android:textSize="@dimen/promo_string_size"
             tools:ignore="SmallSp"
             tools:text="Placeholder" />
 
@@ -79,11 +79,11 @@
             android:id="@+id/i_card_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/bottom_string_margin_top"
             android:gravity="center"
             android:text="@{Html.fromHtml(viewModel.bottomDescription)}"
             android:textColor="@android:color/white"
-            android:textSize="13sp"
+            android:textSize="@dimen/bottom_string_size"
             tools:text="Placeholder" />
         </LinearLayout>
       </FrameLayout>
@@ -93,7 +93,7 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="@dimen/linear_buttons_padding"
         app:actions="@{viewModel.content}">
 
       </LinearLayout>
