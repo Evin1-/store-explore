@@ -16,8 +16,10 @@
     tools:context="com.example.myapplication.ui.home.HomeActivity">
 
     <android.support.v7.widget.RecyclerView
+      android:id="@+id/a_main_recycler"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      app:adapter="@{viewModel.questionDataList}"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"

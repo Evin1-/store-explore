@@ -1,7 +1,9 @@
 package com.example.myapplication.ui.home.di
 
 import android.arch.lifecycle.ViewModelProvider
+import com.example.myapplication.data.entities.Card
 import com.example.myapplication.di.scopes.PerView
+import com.example.myapplication.ui.card.CardAdapter
 import com.example.myapplication.ui.home.HomeViewModel
 import com.example.myapplication.util.ViewModelFactory
 import dagger.Module
@@ -18,5 +20,11 @@ class HomeModule {
   @Provides
   fun createViewModelFactory(homeViewModel: HomeViewModel): ViewModelProvider.Factory {
     return ViewModelFactory<HomeViewModel>(homeViewModel)
+  }
+
+  @PerView
+  @Provides
+  fun createCardAdapter(): CardAdapter {
+    return CardAdapter(mutableListOf<Card>())
   }
 }

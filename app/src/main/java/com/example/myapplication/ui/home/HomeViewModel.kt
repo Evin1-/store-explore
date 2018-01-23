@@ -17,7 +17,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val dataRepository: DataRepository,
                                         private val schedulerProvider: SchedulerProvider) : BaseViewModel(), HomeContract.ViewModel {
 
-  private val questionDataList = ObservableArrayList<Card>()
+  val questionDataList = ObservableArrayList<Card>()
   private val questionCardData: MutableLiveData<List<Card>> = MutableLiveData()
 
   override fun loadData() {

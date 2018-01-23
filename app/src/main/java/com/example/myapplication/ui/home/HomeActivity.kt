@@ -4,11 +4,14 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
 import com.example.myapplication.BR
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.di.MainComponent
+import com.example.myapplication.ui.card.CardAdapter
 import com.example.myapplication.ui.home.di.DaggerHomeComponent
 import javax.inject.Inject
 
@@ -16,6 +19,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeCon
 
   @Inject
   lateinit var viewModelFactory: ViewModelProvider.Factory
+
+  @Inject
+  lateinit var cardAdapter: CardAdapter
 
   override val bindingVariable: Int
     get() = BR.viewModel
@@ -30,7 +36,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeCon
 
   override fun onStart() {
     super.onStart()
+    setup()
     viewModel.loadData()
+  }
+
+  private fun setup() {
+    viewDataBinding.aMainRecycler.adapter = cardAdapter
+    viewDataBinding.aMainRecycler.layoutManager = LinearLayoutManager(this)
+    viewDataBinding.aMainRecycler.itemAnimator = DefaultItemAnimator()
   }
 
   override fun injectDependencies(mainComponent: MainComponent?) {

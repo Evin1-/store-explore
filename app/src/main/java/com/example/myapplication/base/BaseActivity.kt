@@ -13,7 +13,7 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
   protected abstract val bindingVariable: Int
 
   protected lateinit var viewModel: V
-  protected lateinit var mViewDataBinding: T
+  protected lateinit var viewDataBinding: T
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -26,9 +26,9 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
   }
 
   private fun performDataBinding() {
-    mViewDataBinding = DataBindingUtil.setContentView<T>(this, layoutId)
-    mViewDataBinding.setVariable(bindingVariable, viewModel)
-    mViewDataBinding.executePendingBindings()
+    viewDataBinding = DataBindingUtil.setContentView<T>(this, layoutId)
+    viewDataBinding.setVariable(bindingVariable, viewModel)
+    viewDataBinding.executePendingBindings()
   }
 
   abstract fun injectDependencies(mainComponent: MainComponent?)
