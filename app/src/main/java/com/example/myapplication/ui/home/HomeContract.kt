@@ -9,7 +9,7 @@ import com.example.myapplication.data.entities.Card
 interface HomeContract {
   interface View {
     fun subscribeToLiveData()
-    fun showError(error: String)
+    fun showError(error: String?)
     fun showProgress()
     fun hideProgress()
   }
@@ -17,6 +17,7 @@ interface HomeContract {
   interface ViewModel {
     fun getLiveDataList(): MutableLiveData<List<Card>>
     fun setLiveDataList(cardLiveData: List<Card>?)
+    fun getErrorMessage(): MutableLiveData<String>
     fun loadData()
   }
 }

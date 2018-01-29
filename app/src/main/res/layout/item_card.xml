@@ -23,70 +23,65 @@
       android:layout_height="match_parent"
       android:orientation="vertical">
 
-      <FrameLayout
+      <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8">
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/card_background_description"
+        android:scaleType="fitCenter"
+        app:imageUrl="@{viewModel.backgroundImage}" />
 
-        <ImageView
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/initial_padding_linear">
+
+        <TextView
+          android:id="@+id/i_card_top"
           android:layout_width="match_parent"
-          android:layout_height="@dimen/default_image_height"
-          android:contentDescription="@string/card_background_description"
-          android:scaleType="centerCrop"
-          app:imageUrl="@{viewModel.backgroundImage}" />
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="@{viewModel.topDescription}"
+          android:textSize="@dimen/top_string_size"
+          app:emptyVisibility="@{viewModel.topDescription}"
+          tools:text="Placeholder" />
 
-        <LinearLayout
+        <TextView
+          android:id="@+id/i_card_title"
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:orientation="vertical"
-          android:padding="@dimen/initial_padding_linear">
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/title_string_margin_top"
+          android:gravity="center"
+          android:text="@{viewModel.title}"
+          android:textSize="@dimen/title_string_size"
+          android:textStyle="bold"
+          app:emptyVisibility="@{viewModel.title}"
+          tools:text="Placeholder" />
 
-          <TextView
-            android:id="@+id/i_card_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@{viewModel.topDescription}"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/top_string_size"
-            tools:text="Placeholder" />
+        <TextView
+          android:id="@+id/i_card_promo"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/promo_string_margin_top"
+          android:gravity="center"
+          android:text="@{viewModel.promoMessage}"
+          android:textSize="@dimen/promo_string_size"
+          app:emptyVisibility="@{viewModel.promoMessage}"
+          tools:ignore="SmallSp"
+          tools:text="Placeholder" />
 
-          <TextView
-            android:id="@+id/i_card_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/title_string_margin_top"
-            android:gravity="center"
-            android:text="@{viewModel.title}"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/title_string_size"
-            android:textStyle="bold"
-            tools:text="Placeholder" />
-
-          <TextView
-            android:id="@+id/i_card_promo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/promo_string_margin_top"
-            android:gravity="center"
-            android:text="@{viewModel.promoMessage}"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/promo_string_size"
-            tools:ignore="SmallSp"
-            tools:text="Placeholder" />
-
-          <TextView
-            android:id="@+id/i_card_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/bottom_string_margin_top"
-            android:gravity="center"
-            android:text="@{Html.fromHtml(viewModel.bottomDescription)}"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/bottom_string_size"
-            tools:text="Placeholder" />
-        </LinearLayout>
-      </FrameLayout>
+        <TextView
+          android:id="@+id/i_card_bottom"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/bottom_string_margin_top"
+          android:gravity="center"
+          android:text="@{Html.fromHtml(viewModel.bottomDescription)}"
+          android:textSize="@dimen/bottom_string_size"
+          app:emptyVisibility="@{viewModel.bottomDescription}"
+          tools:text="Placeholder" />
+      </LinearLayout>
 
       <LinearLayout
         android:layout_width="match_parent"

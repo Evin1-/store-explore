@@ -66,9 +66,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), HomeCon
   override fun subscribeToLiveData() {
     viewModel.getLiveDataList()
         .observe(this, Observer { viewModel.setLiveDataList(it) })
+
+    viewModel.getErrorMessage()
+        .observe(this, Observer { showError(it) })
   }
 
-  override fun showError(error: String) {
+  override fun showError(error: String?) {
     Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
   }
 

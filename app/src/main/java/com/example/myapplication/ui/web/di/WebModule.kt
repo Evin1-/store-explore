@@ -5,6 +5,7 @@ import com.example.myapplication.data.entities.Card
 import com.example.myapplication.di.scopes.PerView
 import com.example.myapplication.ui.card.CardAdapter
 import com.example.myapplication.ui.home.HomeViewModel
+import com.example.myapplication.ui.web.WebViewModel
 import com.example.myapplication.util.ViewModelFactory
 import dagger.Module
 import dagger.Provides
@@ -13,18 +14,11 @@ import dagger.Provides
  * Created by evin on 1/23/18.
  */
 @Module
-
-class HomeModule {
-
-  @PerView
-  @Provides
-  fun createViewModelFactory(homeViewModel: HomeViewModel): ViewModelProvider.Factory {
-    return ViewModelFactory(homeViewModel)
-  }
+class WebModule {
 
   @PerView
   @Provides
-  fun createCardAdapter(): CardAdapter {
-    return CardAdapter(mutableListOf())
+  fun createViewModelFactory(webViewModel: WebViewModel): ViewModelProvider.Factory {
+    return ViewModelFactory(webViewModel)
   }
 }

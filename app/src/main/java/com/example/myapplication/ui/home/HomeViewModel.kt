@@ -7,7 +7,6 @@ import com.example.myapplication.data.DataRepository
 import com.example.myapplication.data.entities.Card
 import com.example.myapplication.util.AppLogger
 import com.example.myapplication.util.rx.SchedulerProvider
-import io.reactivex.functions.Consumer
 import javax.inject.Inject
 
 /**
@@ -19,12 +18,15 @@ class HomeViewModel @Inject constructor(private val dataRepository: DataReposito
 
   val questionDataList = ObservableArrayList<Card>()
   private val questionCardData: MutableLiveData<List<Card>> = MutableLiveData()
+  private val error: MutableLiveData<String> = MutableLiveData()
 
   override fun loadData() {
-    dataRepository.getCards()
+    val disposable = dataRepository.getCards()
         .subscribeOn(schedulerProvider.io())
         .observeOn(schedulerProvider.ui())
-        .subscribe(Consumer { questionCardData.value = it })
+        .subscribe({ questionCardData.value = it }, { errorDownloading(it) })
+
+    compositeDisposable.add(disposable)
   }
 
   override fun getLiveDataList(): MutableLiveData<List<Card>> {
@@ -34,5 +36,15 @@ class HomeViewModel @Inject constructor(private val dataRepository: DataReposito
   override fun setLiveDataList(cardLiveData: List<Card>?) {
     questionDataList.clear()
     questionDataList.addAll(cardLiveData ?: emptyList())
+  }
+
+  private fun errorDownloading(it: Throwable) {
+    questionCardData.value = emptyList()
+    error.value = "Couldn't download data!"
+    AppLogger.d(it.localizedMessage)
+  }
+
+  override fun getErrorMessage(): MutableLiveData<String> {
+    return error
   }
 }
