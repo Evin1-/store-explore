@@ -1,11 +1,7 @@
 package com.example.myapplication.ui.web
 
-import android.databinding.Bindable
-import android.databinding.Observable
 import android.databinding.ObservableField
-import com.android.databinding.library.baseAdapters.BR
 import com.example.myapplication.base.BaseViewModel
-import com.example.myapplication.util.AppLogger
 import javax.inject.Inject
 
 /**

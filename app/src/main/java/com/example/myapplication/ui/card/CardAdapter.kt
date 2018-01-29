@@ -1,11 +1,10 @@
 package com.example.myapplication.ui.card
 
 import android.support.v7.widget.RecyclerView
-import android.view.View
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.myapplication.data.entities.Card
 import com.example.myapplication.databinding.ItemCardBinding
-import android.view.LayoutInflater
 
 
 /**

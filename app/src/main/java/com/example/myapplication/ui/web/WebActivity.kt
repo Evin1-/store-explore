@@ -5,11 +5,7 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.example.myapplication.BR
@@ -18,7 +14,6 @@ import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.databinding.ActivityWebBinding
 import com.example.myapplication.di.MainComponent
 import com.example.myapplication.ui.home.di.DaggerWebComponent
-import com.example.myapplication.util.AppLogger
 import com.example.myapplication.util.IntentUtils.parseIncomingIntent
 import javax.inject.Inject
 
@@ -75,5 +70,4 @@ class WebActivity : BaseActivity<ActivityWebBinding, WebViewModel>() {
   override fun setViewModel() {
     viewModel = ViewModelProviders.of(this, viewModelFactory).get(WebViewModel::class.java)
   }
-
 }

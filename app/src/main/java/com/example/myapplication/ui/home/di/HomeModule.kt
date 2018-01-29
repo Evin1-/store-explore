@@ -1,7 +1,6 @@
 package com.example.myapplication.ui.home.di
 
 import android.arch.lifecycle.ViewModelProvider
-import com.example.myapplication.data.entities.Card
 import com.example.myapplication.di.scopes.PerView
 import com.example.myapplication.ui.card.CardAdapter
 import com.example.myapplication.ui.home.HomeViewModel
