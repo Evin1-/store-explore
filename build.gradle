@@ -50,6 +50,6 @@ ext {
   jUnitVersion = '4.12'
   testRunnerVersion = '1.0.1'
   espressoRunnerVersion = '3.0.1'
-  robolectricVersion = '3.5.1'
+  robolectricVersion = '3.6.1'
   mockitoVersion = '1.10.19'
 }

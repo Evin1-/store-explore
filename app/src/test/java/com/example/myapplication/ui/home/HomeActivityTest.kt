@@ -2,6 +2,7 @@ package com.example.myapplication.ui.home
 
 import android.view.View
 import com.example.myapplication.BuildConfig
+import kotlinx.android.synthetic.main.activity_home.*
 import org.hamcrest.Matchers.equalTo
 import org.junit.After
 import org.junit.Assert.*
@@ -12,7 +13,6 @@ import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowToast
-import kotlinx.android.synthetic.main.activity_home.*
 
 
 /**
