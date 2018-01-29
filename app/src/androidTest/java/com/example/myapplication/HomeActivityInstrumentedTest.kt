@@ -16,7 +16,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
- * Created by user on 1/23/18.
+ * Created by evin on 1/23/18.
  */
 
 @RunWith(AndroidJUnit4::class)
@@ -26,13 +26,10 @@ class HomeActivityInstrumentedTest {
   val activity = ActivityTestRule<HomeActivity>(HomeActivity::class.java)
 
   @Test
-  fun `searchQuery_shouldLoadDataRecycler`() {
-
-    getViewFromId(R.id.a_main_progress)
-        .perform(click())
+  fun `onLoad_dataShouldBeSetOnRecycler`() {
 
     getViewFromId(R.id.a_main_recycler)
-        .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(1, click()))
+        .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
   }
 
   private fun getViewFromId(id: Int) = onView(withId(id))
